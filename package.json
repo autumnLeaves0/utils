@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "exports": "./src/index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest src",
     "eslint": "eslint src/*.js --fix"
   },
   "author": "autumnLeaves0",
