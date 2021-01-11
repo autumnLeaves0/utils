@@ -1,10 +1,11 @@
-export function urlParse(url) {
-  if (/^https?:\/\/[^?]+\??([^#]*)/.test(url)){ url = RegExp.$1 || ''
-  console.log( url, RegExp.$1,RegExp.$2,RegExp.$3)}
-  var reg = /([^&=?]+)=?([^&=?]*?)(&|$|#.*)/g
-  var o = {}
+export function urlParse (url) {
+  if (/^https?:\/\/[^?]+\??([^#]*)/.test(url)) {
+    url = RegExp.$1 || '';
+  }
+  const reg = /([^&=?]+)=?([^&=?]*?)(&|$|#.*)/g;
+  const o = {};
   while (reg.test(url)) {
-    o[RegExp.$1] = decodeURIComponent(RegExp.$2) || 'true'
+    o[RegExp.$1] = decodeURIComponent(RegExp.$2) || 'true';
   }
   return o;
 }
