@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "exports": "./src/index.js",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest src",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "eslint": "eslint src/*.js --fix"
   },
   "author": "autumnLeaves0",
@@ -27,10 +27,13 @@
     }
   },
   "lint-staged": {
-    "src/**/*.js": [
+    "src/**/*.test.js": [
       "eslint --fix",
-      "git add",
       "npm run test"
+    ],
+    "src/**/*!(*.test).js": [
+      "eslint --fix",
+      "npm run test -- --findRelatedTests"
     ]
   }
 }
