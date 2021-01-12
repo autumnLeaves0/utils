@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./src/index.js",
   "exports": "./src/index.js",
+  "sideEffects": false,
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "eslint": "eslint src/*.js --fix"
